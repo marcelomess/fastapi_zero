@@ -73,7 +73,7 @@ def user(session: Session):
     session.commit()
     session.refresh(user)
 
-    user.clean_password = password
+    setattr(user, 'clean_password', password)
 
     return user
 
